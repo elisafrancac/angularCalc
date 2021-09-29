@@ -10,21 +10,24 @@ export class CalculatorService {
   static readonly DIV : string = '/';
   static readonly MULT : string = '*';
 
-  constructor(num1 : number, num2 : number, operator : string) {
+  constructor() { }
+
+  calc(num1 : number, num2 : number, operator : string): number {
     let result: number;
+
     switch(operator) {
       case CalculatorService.SUM:
         result = num1 + num2;
-        break;
+      break;
       case CalculatorService.SUB:
         result = num1 - num2;
-        break;
+      break;
       case CalculatorService.DIV:
         result = num1 / num2;
-        break;
+      break;
       case CalculatorService.MULT:
         result = num1 * num2;
-        break;
+      break;
       default:
         result = 0;
     }
