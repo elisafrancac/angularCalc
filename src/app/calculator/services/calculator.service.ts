@@ -5,5 +5,29 @@ import { Injectable } from '@angular/core';
 })
 export class CalculatorService {
 
-  constructor() { }
+  static readonly SUM : string = '+';
+  static readonly SUB : string = '-';
+  static readonly DIV : string = '/';
+  static readonly MULT : string = '*';
+
+  constructor(num1 : number, num2 : number, operator : string) {
+    let result: number;
+    switch(operator) {
+      case CalculatorService.SUM:
+        result = num1 + num2;
+        break;
+      case CalculatorService.SUB:
+        result = num1 - num2;
+        break;
+      case CalculatorService.DIV:
+        result = num1 / num2;
+        break;
+      case CalculatorService.MULT:
+        result = num1 * num2;
+        break;
+      default:
+        result = 0;
+    }
+    return result;
+  }
 }
